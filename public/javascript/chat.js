@@ -16,7 +16,9 @@ console.log(username, room);
 socket.emit('join', {username, room}, (error)=>{
     if(error)
     {
-        console.log(error);
+         alert(error);
+         location.href ='/';
+
     }
 });
 
@@ -74,7 +76,7 @@ socket.on('chatRoomUsers',(users)=>{
     })
     const sidebarEle= document.createElement('div');
     sidebarEle.innerHTML=
-        `
+        `  
             <h2 class="room-title">${users[0].room}</h2>
             <h3 class="list-title">Users</h3>
             <ul class="users">
